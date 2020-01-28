@@ -27,7 +27,7 @@ app.post("/upload", function(req, res) {
    });
 }
    res.send({
-     result,
+     ext:mime.extension(file.mimetype),
     success: true,
     message: "File uploaded!",
     file:file.name,
