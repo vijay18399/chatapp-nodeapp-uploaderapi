@@ -21,11 +21,13 @@ app.post("/upload", function(req, res) {
    if(err) 
 {
   res.send({
+    err,
     success: false,
     message: "File failed!",
    });
 }
    res.send({
+     result,
     success: true,
     message: "File uploaded!",
     file:file.name,
