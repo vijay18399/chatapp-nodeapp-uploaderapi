@@ -26,6 +26,7 @@ app.post("/upload", function(req, res) {
   const compress=['zip','rar','7z'];
   const documents=['ppt','doc','pptx','docx','pdf'];
   const pc =['exe','msi'];
+  const data =['csv','xlsv','xls'];
 
   if(image.includes(ext)){
   type = 'image';
@@ -42,7 +43,9 @@ app.post("/upload", function(req, res) {
     type = 'pc';
   } else if(lang.includes(ext)){
     type = 'lang';
-  } else if(ext == 'apk'){
+  }else if(data.includes(ext)){
+    type = 'data'
+  }else if(ext == 'apk'){
     type = 'android'
   }else{
     type = ext
