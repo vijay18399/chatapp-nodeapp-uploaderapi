@@ -16,7 +16,7 @@ app.post("/upload", function(req, res) {
   const original = file.name;
   const mimetype= file.mimetype;
   console.log(file,original,mimetype);
-  file.name  = mime.extension(file.mimetype).toUpperCase()+new Date().valueOf()+'.'+mime.extension(file.mimetype);
+  file.name  = mime.extension(file.mimetype)+new Date().valueOf()+'.'+mime.extension(file.mimetype);
   file.mv('./uploads/' + file.name, function(err, result) {
    if(err) 
 {
